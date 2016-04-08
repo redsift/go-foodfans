@@ -3,7 +3,11 @@
 Generates memorable references using food.
 
 	import "github.com/redsift/go-foodfans"
-	s := foodfans.NewReference()
+	
+	# Seed the rng if required in your main()
+	rand.Seed(time.Now().UTC().UnixNano())
+	
+	s := foodfans.New()
 
 ## go generate
 

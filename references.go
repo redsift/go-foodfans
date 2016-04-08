@@ -7,7 +7,7 @@ import (
 
 const sep = "_"
 
-func NewReference() string {
+func New() string {
 
 	v := Verb(rand.Intn(int(LastVerb)))
 	a := Adjective(rand.Intn(int(LastAdjective)))
