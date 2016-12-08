@@ -2,10 +2,16 @@ package foodfans
 
 import (
 	"math/rand"
+	"time"
+
 	. "github.com/redsift/go-foodfans/lookup"
 )
 
 const sep = "_"
+
+func init() {
+	rand.Seed(time.Now().UTC().Unix())
+}
 
 func New() string {
 
