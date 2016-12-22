@@ -10,7 +10,7 @@ import (
 const sep = "_"
 
 func init() {
-	rand.Seed(time.Now().UTC().Unix())
+	rand.Seed(time.Now().UTC().UnixNano())
 }
 
 func New() string {
