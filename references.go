@@ -2,6 +2,7 @@ package foodfans
 
 import (
 	"math/rand"
+	"strings"
 	"time"
 
 	. "github.com/redsift/go-foodfans/lookup"
@@ -9,14 +10,26 @@ import (
 
 const sep = "_"
 
-func init() {
-	rand.Seed(time.Now().UTC().UnixNano())
-}
+var _default=NewFoodFans(rand.NewSource(time.Now().UnixNano()))
 
 func New() string {
+	return _default.New()
+}
 
-	v := Verb(rand.Intn(int(LastVerb)))
-	a := Adjective(rand.Intn(int(LastAdjective)))
-	n := Noun(rand.Intn(int(LastNoun)))
-	return v.String() + sep + a.String() + sep + n.String()
+type FoodFans struct {
+	rand *rand.Rand
+}
+
+func NewFoodFans(src rand.Source) *FoodFans {
+	return &FoodFans{rand: rand.New(src)}
+}
+
+func (f* FoodFans) New() string {
+	var w strings.Builder
+	w.WriteString(Verb(f.rand.Intn(int(LastVerb))).String())
+	w.WriteString(sep)
+	w.WriteString(Adjective(f.rand.Intn(int(LastVerb))).String())
+	w.WriteString(sep)
+	w.WriteString(Noun(f.rand.Intn(int(LastVerb))).String())
+	return w.String()
 }
