@@ -35,9 +35,9 @@ func (f *FoodFans) New() string {
 
 	w.WriteString(Verb(rng.Intn(int(LastVerb))).String())
 	w.WriteString(sep)
-	w.WriteString(Adjective(rng.Intn(int(LastVerb))).String())
+	w.WriteString(Adjective(rng.Intn(int(LastAdjective))).String())
 	w.WriteString(sep)
-	w.WriteString(Noun(rng.Intn(int(LastVerb))).String())
+	w.WriteString(Noun(rng.Intn(int(LastNoun))).String())
 
 	f.rnd.Put(rng)
 
