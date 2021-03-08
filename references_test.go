@@ -9,16 +9,16 @@ import (
 
 func TestExampleFoodFans_New(t *testing.T) {
 	want := []string {
-		"cut_bland_cabbage",
-		"separate_flavorful_cumquat",
-		"separate_boiled_anchovies",
-		"salt_chunked_coconut",
-		"discard_clove_coated_cod",
-		"divide_acrid_aero_chocolate_bar",
-		"puree_chunked_cauliflower",
-		"mound_gingery_buffalo_wings",
-		"tilt_candied_basil",
-		"soak_caramelized_cumquat",
+		"cut_heavenly_fruit_pie",
+		"separate_warm_corn_flakes",
+		"separate_boiled_funnel_cake",
+		"salt_chunked_pollock",
+		"discard_lemon_mayonnaise",
+		"divide_acrid_fruit",
+		"puree_layered_guacamole",
+		"mound_tender_uglifruit",
+		"tilt_infused_peanuts",
+		"soak_caramelized_yam",
 	}
 
 	foodfans.New()
