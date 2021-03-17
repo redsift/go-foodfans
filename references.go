@@ -7,6 +7,8 @@ import (
 	"sync"
 	"time"
 
+	"github.com/redsift/go-foodfans/internal"
+
 	. "github.com/redsift/go-foodfans/lookup"
 )
 
@@ -24,7 +26,7 @@ type FoodFans struct {
 
 func NewFoodFans(src rand.Source) *FoodFans {
 	return &FoodFans{
-		rnd: &sync.Pool{New: func() interface{} { return rand.New(src) }},
+		rnd: &sync.Pool{New: func() interface{} { return rand.New(internal.NewSyncSource(src)) }},
 	}
 }
 
