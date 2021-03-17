@@ -8,7 +8,7 @@ import (
 )
 
 func TestExampleFoodFans_New(t *testing.T) {
-	want := []string {
+	want := []string{
 		"cut_heavenly_fruit_pie",
 		"separate_warm_corn_flakes",
 		"separate_boiled_funnel_cake",
@@ -23,7 +23,7 @@ func TestExampleFoodFans_New(t *testing.T) {
 
 	foodfans.New()
 	ff := foodfans.NewFoodFans(rand.NewSource(0))
-	for i:=0; i<10; i++ {
+	for i := 0; i < 10; i++ {
 		got := ff.New()
 		if got != want[i] {
 			t.Errorf("want %s, got %s", want[i], got)
