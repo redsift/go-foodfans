@@ -22,9 +22,9 @@ func TestExampleFoodFans_New(t *testing.T) {
 	}
 
 	foodfans.New()
-	ff := foodfans.NewFoodFans(rand.NewSource(0))
+	rand.Seed(0)
 	for i := 0; i < 10; i++ {
-		got := ff.New()
+		got := foodfans.New()
 		if got != want[i] {
 			t.Errorf("want %s, got %s", want[i], got)
 		}
